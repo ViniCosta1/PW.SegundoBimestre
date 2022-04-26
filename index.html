@@ -9,30 +9,42 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-
-
+    <link rel="stylesheet" href="style.css">
     <title>Documento</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand"> <i class="fa-solid fa-newspaper"></i> Brand</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <a class="navbar-brand Logo"> <i class="fa-solid fa-newspaper"></i> Logo</a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="my-nav" class="collapse navbar-collapse">
+        <div id="my-nav" class="collapse navbar-collapse ">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Item 1 <span class="sr-only">(current)</span></a>
+                    <a class="nav-link tamanhoFonte" href="#">Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Item 2</a>
+                    <div class="dropdown nav-link tamanhoFonte">
+                        <button id="my-dropdown" class="DropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notícias <i class="fa-solid fa-caret-down tamanhoIcones"></i></button>
+                        <div class="dropdown-menu" aria-labelledby="my-dropdown">
+                            <a class="dropdown-item" href="#">Desenvolvimento de Sistemas</a>
+                            <a class="dropdown-item" href="#">Linguagens</a>
+                            <a class="dropdown-item" href="#">Edificações</a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
     </nav>
-
-
+<div class="jumbotron jumbotron-fluid text-center fundoImagem mt-5">
+    <h1 class="display-4 ">Portal de Notícias da Etec</h1>
+    <p class="lead">Seja bem vindo</p>
+    <hr class="my-4">
+    <p>Content</p>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.js" integrity="sha512-JtLrV1ofzavnjW9efbM8bX78Kcx6dvZPn+VhmJfBg4yKQvqxMX4FQI7NjAHb6cviH/92xOHBI74kVPsafPnnHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

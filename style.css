@@ -1,0 +1,25 @@
+.tamanhoFonte {
+    font-size: 20pt;
+}
+
+.Logo {
+    font-size: 30pt;
+}
+
+.DropDown {
+    border: none;
+    background-color: white;
+}
+
+.tamanhoIcones {
+    font-size: 15pt;
+}
+
+.fundoImagem {
+    background-image: url(img/etec.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.fundoTexto {}
