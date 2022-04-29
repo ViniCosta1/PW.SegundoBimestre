@@ -1,22 +1,43 @@
+/* 
+    * Relacionado a textos
+*/
+
+.centroDiv {
+    margin: 0;
+}
+
 .tamanhoFonte {
     font-size: 20pt;
 }
 
-.Logo {
-    font-size: 30pt;
+.fonteTitulo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 1.5px;
 }
 
-.DropDown {
-    border: none;
-    background-color: white;
+/* 
+    * Relacionado a imagens e div's
+*/
+
+.cssBorder {
+    border-radius: 40px;
 }
 
 .tamanhoIcones {
     font-size: 15pt;
 }
 
+.tamanhoImagemLogo {
+    height: 4rem;
+}
+
+.Logo {
+    font-size: 30pt;
+}
+
 .fundoImagem {
-    background-image: url(img/etec.jpg);
+    background-image: url(img/etecFundo.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
