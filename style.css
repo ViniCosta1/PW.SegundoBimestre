@@ -32,6 +32,10 @@
     height: 4rem;
 }
 
+.tamanhoImagemCPS {
+    width: 200px;
+}
+
 .Logo {
     font-size: 30pt;
 }
@@ -40,5 +44,4 @@
     background-image: url(img/etecFundo.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
 }
