@@ -21,6 +21,16 @@
     font-size: 13pt;
 }
 
+.ancora {
+    color: black;
+    background-color: transparent;
+}
+
+.ancora:hover {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.705);
+    
+}
 /* 
     * Relacionado a imagens e div's
 */
