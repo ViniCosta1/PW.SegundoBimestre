@@ -24,7 +24,7 @@ $('#form1').submit(function(e){
                 method: 'POST',
                 data: {login: u_login, password: u_password},
                 dataType: 'json',
-                success: function(data) { window.location = './view/dashboard.php' }
+                success: function(data) { window.location = './view/dashboard.html' }
             })
         }
     });
