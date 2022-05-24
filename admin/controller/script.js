@@ -15,16 +15,16 @@ $('#form1').submit(function(e){
         dataType: 'json'
     }).done(function(result){
         console.log(result);
-        if ($('#error').is(':empty')){
+        if ($('#error').is(':empty') && result != true){
             $('#error').prepend(result);
         }
-        if (result == true) {
+        if (result == true) {   
             $.ajax({
                 url: './model/login.php',
                 method: 'POST',
                 data: {login: u_login, password: u_password},
-                success: function(data) { window.location.href = './view/dashboard.html' },
-                dataType: 'json'
+                dataType: 'json',
+                success: function(data) { window.location = './view/dashboard.php' }
             })
         }
     });

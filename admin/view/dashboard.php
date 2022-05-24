@@ -1,3 +1,7 @@
+<?php
+include "../model/admin_status.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,12 +15,11 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" style="font-size: 20pt;"> <i class="fa-solid fa-newspaper"></i> Painel de Controle</a>
-        <form class="form-inline" id="logoutForm">
-            <input class="btn btn-info my-2 my-sm-0 mx-1 mx-sm-3 mx-md-3" type="button" value="Minha Conta">
-            <input class="btn btn-success my-2 my-sm-0 mx-1 mx-sm-2 mx-md-2" type="button" value="Sair">
+        <form class="form-inline">
+            <a href="my_account.html" class="btn btn-info my-2 my-sm-0 mx-1 mx-sm-3 mx-md-3">Minha Conta</a>
+            <a href="../model/logout.php" class="btn btn-success my-2 my-sm-0 mx-1 mx-sm-2 mx-md-2">Sair</a>
         </form>
     </nav>
 
-    
 </body>
 </html>
