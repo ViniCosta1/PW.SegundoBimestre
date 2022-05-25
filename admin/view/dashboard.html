@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" integrity="sha512-57lHfvbE5GLWA20qDTCTRUpKntBnFlG0V+x8f3q3DqZK6XlHGVsbpCCI/kadtaFBMEYmq5IeVZnsWjWx2QoQtw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <title>Documento</title>
+    <link rel="stylesheet" href="../style_dashboard.css">
+    <link rel="shortcut icon" href="../../img/icone_aba.png">
+    <title>EtecNews</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
@@ -17,5 +19,60 @@
         </form>
     </nav>
 
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="../../img/icone_aba.png" alt="" height="48px"> Etec - News</h3>
+            </div>
+    
+            <ul class="list-unstyled components">
+                <p style="font-size: 16pt;">Ações do Site</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Notícias</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Criar</a>
+                        </li>
+                        <li>
+                            <a href="#">Deletar</a>
+                        </li>
+                        <li>
+                            <a href="#">Alterar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuários do Portal</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Administrador</a>
+                        </li>
+                        <li>
+                            <a href="#">Escritor</a>
+                        </li>
+                        <li>
+                            <a href="#">Leitor</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Banco de Dados</a>
+                </li>
+            </ul>
+            <div class="list-unstyled components">
+                <ul class="list-unstyled">
+                    <li class="text-center">
+                        TODOS OS DIREITOS RESERVADOS
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    </div>
+
+    <!-- * Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.js" integrity="sha512-JtLrV1ofzavnjW9efbM8bX78Kcx6dvZPn+VhmJfBg4yKQvqxMX4FQI7NjAHb6cviH/92xOHBI74kVPsafPnnHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
