@@ -6,8 +6,8 @@ $createNoticia = $_REQUEST['createNoticia'];
 $addAdminVini = $_REQUEST['addAdminVini'];
 $addAdminPaulo = $_REQUEST['addAdminPaulo'];
 
+// * Adicionar tabelas
 class Tabelas {
-
     function tabelaNoticia() {
         global $conn;
         
@@ -16,6 +16,7 @@ class Tabelas {
                 noticia_id INT AUTO_INCREMENT,
                 titulo VARCHAR(255) NOT NULL, 
                 autor VARCHAR(255) NOT NULL, 
+                curso VARCHAR(255) NOT NULL, 
                 texto TEXT NOT NULL, 
                 PRIMARY KEY(noticia_id)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;'
@@ -50,7 +51,10 @@ class Tabelas {
             echo "deu merda: ".$e;
         };
     }
+}
 
+// * Adicionar informações as tabelas
+class Adicionar {
     function addAdminVini() {
         global $conn;
         
@@ -90,12 +94,12 @@ if (isset($createNoticia)) {
 }
 
 if (isset($addAdminVini)) {
-    $criar = new Tabelas();
+    $criar = new Adicionar();
     $criar->addAdminVini();
 }
 
 if (isset($addAdminPaulo)) {
-    $criar = new Tabelas();
+    $criar = new Adicionar();
     $criar->addAdminPaulo();
 }
 

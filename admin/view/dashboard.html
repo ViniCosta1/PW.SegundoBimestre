@@ -11,19 +11,13 @@
     <title>EtecNews</title>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.082);">
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" style="font-size: 20pt;"> <i class="fa-solid fa-newspaper"></i> Painel de Controle</a>
-        <form class="form-inline">
-            <a href="my_account.html" class="btn btn-info my-2 my-sm-0 mx-1 mx-sm-3 mx-md-3">Minha Conta</a>
-            <a href="../model/logout.php" class="btn btn-success my-2 my-sm-0 mx-1 mx-sm-2 mx-md-2">Sair</a>
-        </form>
-    </nav>
 
-    <div class="wrapper" style="position: fixed;">
+    
+    <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3><img src="../../img/icone_aba.png" alt="" height="48px"> Etec - News</h3>
+                <h4><img src="../../img/icone_aba.png" alt="" height="48px"> Etec - News</h4>
             </div>
     
             <ul class="list-unstyled components">
@@ -33,13 +27,78 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Notícias</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Criar</a>
+                            <!-- * Inicio do Modal -->
+                            <a>
+                                <button type="button" id="btn-modal" data-toggle="modal" data-target="#exampleModal">
+                                    Criar
+                                </button>
+
+                                <!-- * Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Criar Notícia</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- * Conteúdo -->
+                                        <div class="modal-body">
+                                            <div method="post" action="../model/create_news">
+                                                <div class="form-group">
+                                                    <label for="news-title">Título</label>
+                                                    <input id="news-title" class="form-control" type="text" name="title" placeholder="Título"><br>
+                                                    <div class="form-group">
+                                                        <label for="select-author">Autor</label>
+                                                        <select id="select-author" class="form-control" name="author">
+                                                            <option>Adriano</option>
+                                                            <option>Diego</option>
+                                                            <option>Paulo Henrique</option>
+                                                            <option>Pedro Augusto</option>
+                                                            <option>Vinicius</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="select-course">Curso</label>
+                                                        <select id="select-course" class="form-control" name="course">
+                                                            <option>Desenvolvimento de Sistemas</option>
+                                                            <option>Recursos Humanos</option>
+                                                            <option>Edificações</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="content">Conteúdo</label>
+                                                        <textarea id="content" class="form-control" name="text" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            <input type="submit" class="btn btn-primary" value="Criar">
+                                        </form>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- * Fim do Modal -->
                         </li>
                         <li>
-                            <a href="#">Deletar</a>
+                            <a href="">
+                                <button type="button" id="btn-modal" class="" data-toggle="modal" data-target="#exampleModal">
+                                    Deletar
+                                </button>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Alterar</a>
+                            <a href="">
+                                <button type="button" id="btn-modal" class="" data-toggle="modal" data-target="#exampleModal">
+                                    Alterar
+                                </button>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -69,132 +128,141 @@
                 </ul>
             </div>
         </nav>
-    
+        
+            <!-- * Conteúdo -->
+            <div class="container-fluid">
+                <nav class="navbar navbar-light bg-light">
+                    <a class="navbar-brand" style="font-size: 20pt;"> <i class="fa-solid fa-newspaper"></i> Painel de Controle</a>
+                    <form class="form-inline">
+                        <a href="my_account.html" class="btn btn-info my-2 my-sm-0 mx-1 mx-sm-3 mx-md-3">Minha Conta</a>
+                        <a href="../model/logout.php" class="btn btn-success my-2 my-sm-0 mx-1 mx-sm-2 mx-md-2">Sair</a>
+                    </form>
+                </nav>
+            <div class="container bg-light rounded">
+                <div class="row mt-3 text-center">
+                
+                    <!-- * Começo da Notícia -->
+                    <div class="col-12 col-sm-4 col-md-4 mb-4 mb-sm-0 mb-md-0 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Total de Notícias</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row text-center">
+                                    <div class="col-12 mt-0 mt-sm-5 mt-md-5">
+                                        <h1><b>7</b></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- * Espaço entre as notícias e as notícias cada curso-->
+                    <div class="col-0 col-sm-1 col-md-1"></div>
+                
+                    <div class="col-12 col-sm-7 col-md-7 mb-4 mb-sm-0 mb-md-0 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Notícias Cada Curso</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row text-center">
+                                    <div class="col-12 mt-5">
+                                        <h1>*gráfico*</h1>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 text-center">
+                
+                    <!-- * Começo da Notícia -->
+                    <div class="col-12 col-sm-4 col-md-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Visitas no Dia</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-12 mt-3">
+                                        <h1><b>372 - Visitas</b></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-12 col-sm-4 col-md-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Total de Administradores</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-12 mt-3">
+                                        <h1><b>3</b></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-12 col-sm-4 col-md-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Total de Escritores</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-12 mt-3 mb-3">
+                                        <h1><b>6</b></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row mt-3 text-center">
+                    <div class="col-12 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
+                        <h3 class="pt-2">
+                            <b>Alguma Coisa</b>
+                        </h3>
+                    
+                        <div class="dropdown-divider"></div>
+                        <div class="col-12">
+                            <div class="container p-0">
+                                <div class="row">
+                                    <div class="col-12 mt-3">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- * Conteúdo -->
-    <div class="container bg-light rounded">
-        <div class="row mt-3 text-center">
-
-            <!-- * Começo da Notícia -->
-            <div class="col-4 mb-4 mb-sm-0 mb-md-0 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Total de Notícias</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row text-center">
-                            <div class="col-12 mt-5">
-                                <h1><b>7</b></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- * Espaço entre as notícias e as notícias cada curso-->
-            <div class="col-1"></div>
-
-            <div class="col-7 mb-4 mb-sm-0 mb-md-0 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Notícias Cada Curso</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row text-center">
-                            <div class="col-12 mt-5">
-                                <h1>*gráfico*</h1>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3 text-center">
-
-            <!-- * Começo da Notícia -->
-            <div class="col-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Visitas no Dia</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row">
-                            <div class="col-12 mt-3">
-                                <h1><b>372 - Visitas</b></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Total de Administradores</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row">
-                            <div class="col-12 mt-3">
-                                <h1><b>3</b></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Total de Escritores</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row">
-                            <div class="col-12 mt-3 mb-3">
-                                <h1><b>6</b></h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-3 text-center">
-            <div class="col-12 mb-4 mb-sm-0 mb-md-0 mt-4 shadow rounded">
-                <h3 class="pt-2">
-                    <b>Alguma Coisa</b>
-                </h3>
-
-                <div class="dropdown-divider"></div>
-                <div class="col-12">
-                    <div class="container p-0">
-                        <div class="row">
-                            <div class="col-12 mt-3">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- * Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

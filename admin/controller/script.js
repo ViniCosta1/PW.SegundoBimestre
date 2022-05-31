@@ -6,7 +6,6 @@ $('#form1').submit(function(e){
     // * Pegando valor de variável
     var u_login = $('#login').val();
     var u_password = $('#password').val();
-
     // * Enviando dados para o php
     $.ajax({
         url: './model/login.php',
@@ -14,7 +13,6 @@ $('#form1').submit(function(e){
         data: {login: u_login, password: u_password},
         dataType: 'json'
     }).done(function(result){
-        console.log(result);
         if ($('#error').is(':empty') && result != true){
             $('#error').prepend(result);
         }
