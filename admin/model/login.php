@@ -5,15 +5,19 @@ header('Content-Type: application/json');
 
 $login = $_POST['login'];
 $senha = $_POST['password'];
-header("Location: ../view/tabelas.html");
 $_SESSION['login'] = $login;
+$stmt = $conn->query("SELECT login, senha FROM admin WHERE login = '$login'");
+$row = $stmt->fetch(PDO::FETCH_OBJ);
+if ($row == false) {
+    echo json_encode("[ERRO] Suas credencias estão erradas");
+}
 
-$stmt = $conn->query("SELECT * FROM admin");
-while($row = $stmt->fetch(PDO::FETCH_OBJ)){
-    if ($row->login != $login or $row->senha != $senha) {
-        echo json_encode("Erro, suas credenciais estão erradas! Tente novamente...");
-    } else {
-        $_SESSION['admin'] = true;
+// TODO: Ajustar o else do While
+
+while($row){
+    if ($row->senha == $senha) {
         echo json_encode(true);
+    } else {
+        echo json_encode("[ERRO] Suas credencias estão erradas");
     }
 }
