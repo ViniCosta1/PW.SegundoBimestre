@@ -5,6 +5,8 @@ $createAdmin = $_REQUEST['createAdmin'];
 $createNoticia = $_REQUEST['createNoticia'];
 $addAdminVini = $_REQUEST['addAdminVini'];
 $addAdminPaulo = $_REQUEST['addAdminPaulo'];
+$deleteAdmins = $_REQUEST['deleteAdmins'];
+$deleteNews = $_REQUEST['deleteNews'];
 
 // * Adicionar tabelas
 class Tabelas {
@@ -80,9 +82,29 @@ class Adicionar {
         $stmt = $conn->prepare($sql);
         $stmt->execute($data);
     }
-    
 }
 
+class DeletarInfos {
+    // * Deletar informações
+    function deleteAdmins() {
+        global $conn;
+
+        $sql = "DELETE FROM admin";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
+
+    function deleteNews() {
+        global $conn;
+
+        $sql = "DELETE FROM noticia";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
+}
+
+
+// * FUNÇÕES CRIAR
 if (isset($createAdmin)) {
     $criar = new Tabelas();
     $criar->tabelaAdmin();
@@ -93,14 +115,27 @@ if (isset($createNoticia)) {
     $criar->tabelaNoticia();
 }
 
+// * FUNÇÕES ADICIONAR
 if (isset($addAdminVini)) {
-    $criar = new Adicionar();
-    $criar->addAdminVini();
+    $adicionar = new Adicionar();
+    $adicionar->addAdminVini();
 }
 
 if (isset($addAdminPaulo)) {
-    $criar = new Adicionar();
-    $criar->addAdminPaulo();
+    $adicionar = new Adicionar();
+    $adicionar->addAdminPaulo();
 }
+
+// * FUNÇÕES DELETAR
+if (isset($deleteAdmins)) {
+    $deletar = new DeletarInfos();
+    $deletar->deleteAdmins();
+}
+
+if (isset($deleteNews)) {
+    $deletar = new DeletarInfos();
+    $deletar->deleteNews();
+}
+
 
 header("Location: ../view/tabelas.html");
