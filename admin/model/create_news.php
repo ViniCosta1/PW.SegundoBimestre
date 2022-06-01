@@ -16,4 +16,4 @@ $data = [
 $sql = "INSERT INTO noticia (titulo, autor, curso, texto) VALUES (:titulo, :autor, :curso, :texto)";
 $stmt = $conn->prepare($sql);
 $stmt->execute($data);
-header("Location: ../view/tabelas.html");
+header("Location: ../view/dashboard.html");
