@@ -3,10 +3,15 @@ require_once "conn.php";
 
 $createAdmin = $_REQUEST['createAdmin'];
 $createNoticia = $_REQUEST['createNoticia'];
+
 $addAdminVini = $_REQUEST['addAdminVini'];
 $addAdminPaulo = $_REQUEST['addAdminPaulo'];
+$addNewsTeste = $_REQUEST['addNewsTeste'];
+
 $deleteAdmins = $_REQUEST['deleteAdmins'];
 $deleteNews = $_REQUEST['deleteNews'];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // * Adicionar tabelas
 class Tabelas {
@@ -55,6 +60,8 @@ class Tabelas {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // * Adicionar informações as tabelas
 class Adicionar {
     function addAdminVini() {
@@ -82,8 +89,25 @@ class Adicionar {
         $stmt = $conn->prepare($sql);
         $stmt->execute($data);
     }
+
+    function addNewsTeste() {
+        global $conn;
+        
+        $data = [
+            'titulo' => "Título do Texto",
+            'autor' => "Autor da Notícia",
+            'curso' => "Desenvolvimento de Sistemas",
+            'texto' => "Texto teste... Texto teste... Texto teste... Texto teste... Texto teste... Texto teste... Texto teste... Texto teste... Texto teste... "
+        ];
+        $sql = "INSERT INTO noticia (titulo, autor, curso, texto) VALUES (:titulo, :autor, :curso, :texto)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($data);
+    }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// * Deletar informações as tabelas
 class DeletarInfos {
     // * Deletar informações
     function deleteAdmins() {
@@ -103,6 +127,7 @@ class DeletarInfos {
     }
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // * FUNÇÕES CRIAR
 if (isset($createAdmin)) {
@@ -115,6 +140,7 @@ if (isset($createNoticia)) {
     $criar->tabelaNoticia();
 }
 
+
 // * FUNÇÕES ADICIONAR
 if (isset($addAdminVini)) {
     $adicionar = new Adicionar();
@@ -125,6 +151,12 @@ if (isset($addAdminPaulo)) {
     $adicionar = new Adicionar();
     $adicionar->addAdminPaulo();
 }
+
+if (isset($addNewsTeste)) {
+    $adicionar = new Adicionar();
+    $adicionar->addNewsTeste();
+}
+
 
 // * FUNÇÕES DELETAR
 if (isset($deleteAdmins)) {
